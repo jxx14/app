@@ -23,13 +23,13 @@ public class SearchController {
 
     @RequestMapping(value="/searchExpert",method= RequestMethod.GET)
     @ResponseBody
-    public String searchExpert(HttpServletRequest request) {
+    public List<Expert_customize> searchExpert(HttpServletRequest request) {
         String name=request.getParameter("name");
         String speciality=request.getParameter("speciality");
         String position=request.getParameter("position");
         String school=request.getParameter("school");
         List<Expert_customize> expertList = searchService.getExpert(name,speciality,school,position);
-        return "good: " + expertList.get(0).school;
+        return expertList;
 
     }
 

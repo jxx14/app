@@ -16,6 +16,6 @@ public class SearchServiceImpl implements SearchService {
 
     @Override
     public List<Expert_customize> getExpert(String name, String speciality, String school, String position) {
-        return searchRepository.findExpert_customizeByName(name);
+        return searchRepository.findExpert_customizeComplex(name, speciality, school, position);
     }
 }
