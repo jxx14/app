@@ -17,7 +17,7 @@ public class Expert_customize implements Serializable {
     public String phone_num;
     public String position;
     public String school;
-    public String speciality;
+    public String specialty;
 
     public Integer getId() {
         return id;
@@ -83,11 +83,11 @@ public class Expert_customize implements Serializable {
         this.school = school;
     }
 
-    public String getSpeciality() {
-        return speciality;
+    public String getSpecialty() {
+        return specialty;
     }
 
-    public void setSpeciality(String speciality) {
-        this.speciality = speciality;
+    public void setSpecialty(String specialty) {
+        this.specialty = specialty;
     }
 }
