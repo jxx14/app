@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 @Entity
-public class Expert implements Serializable {
+public class Expert_customize implements Serializable {
 
     @Id
     public Integer id;
