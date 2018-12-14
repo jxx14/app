@@ -15,11 +15,10 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository ;
 
-//    @Override
-//    public User getUserByWeChatID(String str) {
-//        return userRepository.getUserByWeChatID(str);
-//    }
-
+    @Override
+    public User getUserByWeChatID(String we_chatid) {
+        return userRepository.getUserByWid(we_chatid);
+    }
 
     @Override
     public User getUserByName(String str) {
@@ -31,8 +30,13 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
+    @Override
+    public User modifyUser(User user) {
+        return userRepository.saveAndFlush(user);
+    }
+
 //    @Override
-//    public List<Reservation> getReservationList(Integer userID, String state) {
-//        return userRepository.findReservationByStateAndUserID("state",userID);
+//    public List<Reservation> getReservationList(User user, String state) {
+//        return userRepository.findReservationByState(user,state);
 //    }
 }
