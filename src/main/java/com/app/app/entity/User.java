@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class User {
 
     @Id
-    private String wid;
+    private String wid;//微信ID作为唯一标识符
     private String name;
     private String pwd;
     private String phone;

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UserService {
 
-    User getUserByWeChatID(String we_chatid);
+    User getUserByWid(String wid);
     User getUserByName(String str);
     void addUser(User user);
     User modifyUser(User user);
