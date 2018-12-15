@@ -19,20 +19,20 @@ public class Reservation {
         this.id = id;
     }
 
-    public String getUserID() {
-        return userID;
+    public String getUser_id() {
+        return user_id;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
 
-    public String getContent() {
-        return content;
+    public String getService_id() {
+        return service_id;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setService_id(String service_id) {
+        this.service_id = service_id;
     }
 
     public String getState() {
@@ -44,8 +44,8 @@ public class Reservation {
     }
 
     //用户ID，预约内容，预约状态
-    private String userID;
-    private String content;
+    private String user_id;
+    private String service_id;
     private String state;
 
 }

@@ -49,10 +49,10 @@ public class SearchController {
 
     @RequestMapping(value="/saveReservation",method= RequestMethod.GET)
     public String saveReservation(HttpServletRequest request) {
-        String content=request.getParameter("content");
-        HttpSession session=request.getSession();
-        String Wid=(String) session.getAttribute("WeChatID");
-        searchService.saveReservation(content,Wid);
+        String user_id=request.getParameter("user_id");
+        String service_id=request.getParameter("service_id");
+        String status=request.getParameter("state");
+        searchService.saveReservation(user_id,service_id,status);
         return "success";
     }
 

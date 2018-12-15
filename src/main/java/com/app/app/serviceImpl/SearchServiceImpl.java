@@ -48,11 +48,11 @@ public class SearchServiceImpl implements SearchService {
     }
 
     @Override
-    public void saveReservation(String content, String id) {
+    public void saveReservation(String user_id, String service_id, String status) {
         Reservation r = new Reservation();
-        r.setUserID(id);
-        r.setContent(content);
-        r.setState("normal");
+        r.setUser_id(user_id);
+        r.setService_id(service_id);
+        r.setState(status);
         reservationRepository.save(r);
     }
 }

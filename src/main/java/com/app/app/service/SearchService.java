@@ -14,7 +14,7 @@ public interface SearchService {
 
     List<String> getTotal(String field);
 
-    void saveReservation(String content, String id);
+    void saveReservation(String user_id, String service_id, String status);
 
     List<Reservation> getReservation(String field, String value);
 }
