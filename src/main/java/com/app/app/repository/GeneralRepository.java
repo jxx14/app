@@ -1,5 +1,6 @@
 package com.app.app.repository;
 
+import com.app.app.entity.Reservation;
 import org.hibernate.query.internal.QueryImpl;
 import org.springframework.stereotype.Repository;
 
@@ -17,6 +18,11 @@ public class GeneralRepository {
 
     public List<String> findField(String field){
         Query query = entityManager.createNativeQuery("select distinct " + field + " from expert_customize");
+        return query.getResultList();
+    }
+
+    public List<Reservation> searchField(String field, String value) {
+        Query query = entityManager.createNativeQuery("select * from reservation where " + field + "='" + value + "'");
         return query.getResultList();
     }
 }

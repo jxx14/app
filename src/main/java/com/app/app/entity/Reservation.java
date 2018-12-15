@@ -19,11 +19,11 @@ public class Reservation {
         this.id = id;
     }
 
-    public Integer getUserID() {
+    public String getUserID() {
         return userID;
     }
 
-    public void setUserID(Integer userID) {
+    public void setUserID(String userID) {
         this.userID = userID;
     }
 
@@ -43,23 +43,9 @@ public class Reservation {
         this.state = state;
     }
 
-    @Override
-    public String toString() {
-        return "Reservation{" +
-                "id=" + id +
-                ", userID=" + userID +
-                ", content='" + content + '\'' +
-                ", state='" + state + '\'' +
-                '}';
-    }
-
     //用户ID，预约内容，预约状态
-    private Integer userID;
+    private String userID;
     private String content;
     private String state;
-
-
-
-
 
 }

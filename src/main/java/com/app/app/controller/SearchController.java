@@ -1,6 +1,7 @@
 package com.app.app.controller;
 
 import com.app.app.entity.Expert_customize;
+import com.app.app.entity.Reservation;
 import com.app.app.entity.Service;
 import com.app.app.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @SpringBootApplication
@@ -45,6 +47,21 @@ public class SearchController {
         return searchService.getTotal(field);
     }
 
+    @RequestMapping(value="/saveReservation",method= RequestMethod.GET)
+    public String saveReservation(HttpServletRequest request) {
+        String content=request.getParameter("content");
+        HttpSession session=request.getSession();
+        String Wid=(String) session.getAttribute("WeChatID");
+        searchService.saveReservation(content,Wid);
+        return "success";
+    }
+
+    @RequestMapping(value="/searchReservation/{field}/{value}",method= RequestMethod.GET)
+    @ResponseBody
+    public List<Reservation> searchReservation(@PathVariable String field,
+                                               @PathVariable String value) {
+        return searchService.getReservation(field,value);
+    }
 }
 
 
