@@ -10,5 +10,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface ReservationRepository extends JpaRepository<Reservation,Integer> {
+    List<Reservation> getAllByState(String state);
+    List<Reservation> getAllByStateAndWid(String state,String wid);
 
 }

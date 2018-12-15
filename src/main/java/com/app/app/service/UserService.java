@@ -11,5 +11,7 @@ public interface UserService {
     User getUserByName(String str);
     void addUser(User user);
     User modifyUser(User user);
-//    List<Reservation> getReservationList(User user, String state);//查看用户的预定列表
+    List<Reservation> getReservationList(String state);//根据状态查看预定列表
+    List<Reservation> getReservationListByWidAndState(String state,String wid);//根据状态查看用户的预定列表
+
 }

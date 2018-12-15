@@ -1,5 +1,6 @@
 package com.app.app.serviceImpl;
 
+import com.app.app.repository.ReservationRepository;
 import com.app.app.repository.UserRepository;
 import com.app.app.entity.Reservation;
 import com.app.app.service.UserService;
@@ -14,6 +15,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository ;
+    @Autowired
+    private ReservationRepository reservationRepository;
 
     @Override
     public User getUserByWid(String wid) {
@@ -35,8 +38,13 @@ public class UserServiceImpl implements UserService {
         return userRepository.saveAndFlush(user);
     }
 
-//    @Override
-//    public List<Reservation> getReservationList(User user, String state) {
-//        return userRepository.findReservationByState(user,state);
-//    }
+    @Override
+    public List<Reservation> getReservationList(String state) {
+        return reservationRepository.getAllByState(state);
+    }
+
+    @Override
+    public List<Reservation> getReservationListByWidAndState(String state, String wid) {
+        return reservationRepository.getAllByStateAndWid(state,wid);
+    }
 }

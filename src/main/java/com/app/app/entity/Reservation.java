@@ -47,5 +47,24 @@ public class Reservation {
     private String user_id;
     private String service_id;
     private String state;
+    private String wid;
 
+    public String getWid() {
+        return wid;
+    }
+
+    public void setWid(String wid) {
+        this.wid = wid;
+    }
+
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "id=" + id +
+                ", user_id='" + user_id + '\'' +
+                ", service_id='" + service_id + '\'' +
+                ", state='" + state + '\'' +
+                ", wid='" + wid + '\'' +
+                '}';
+    }
 }
