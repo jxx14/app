@@ -50,7 +50,7 @@ public class SearchController {
     @RequestMapping(value="/saveReservation",method= RequestMethod.GET)
     public String saveReservation(HttpServletRequest request) {
         String user_id=request.getParameter("user_id");
-        String service_id=request.getParameter("service_id");
+        int service_id=Integer.parseInt(request.getParameter("service_id"));
         String status=request.getParameter("state");
         searchService.saveReservation(user_id,service_id,status);
         return "success";

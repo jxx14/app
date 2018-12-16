@@ -32,6 +32,7 @@ public class SearchServiceImpl implements SearchService {
         return generalRepository.findField(field);
     }
 
+
     @Override
     public List<Reservation> getReservation(String field, String value) {
         return generalRepository.searchField(field,value);
@@ -48,11 +49,12 @@ public class SearchServiceImpl implements SearchService {
     }
 
     @Override
-    public void saveReservation(String user_id, String service_id, String status) {
+    public void saveReservation(String wid, int service_id, String status) {
         Reservation r = new Reservation();
-        r.setUser_id(user_id);
+        r.setWid(wid);
         r.setService_id(service_id);
         r.setState(status);
         reservationRepository.save(r);
     }
+
 }

@@ -47,4 +47,9 @@ public class UserServiceImpl implements UserService {
     public List<Reservation> getReservationListByWidAndState(String state, String wid) {
         return reservationRepository.getAllByStateAndWid(state,wid);
     }
+
+    @Override
+    public List<Object> getReservations(String wid) {
+        return reservationRepository.getReservations(wid);
+    }
 }

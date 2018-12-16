@@ -1,10 +1,16 @@
 package com.app.app.service;
 
+import jdk.nashorn.internal.parser.JSONParser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.json.JsonContent;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.Iterator;
+import java.util.List;
+
 //
 //
 @RunWith(SpringRunner.class)
@@ -13,6 +19,15 @@ public class UserServiceTest {
 //
     @Autowired
     private UserService userService;
+    private Object object;
+
+//    @Test
+//    public void getReservations() {
+//        for (Object object:userService.getReservations("1")){
+//            System.out.println(object.getClass());
+//        }
+//
+//    }
 //
 //    @Test
 //    public void getReservationList() {
