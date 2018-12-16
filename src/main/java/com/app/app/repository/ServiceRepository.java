@@ -23,4 +23,8 @@ public interface ServiceRepository extends JpaRepository<Service,Integer> {
                                 @Param("specialty") String speciality,
                                 @Param("school") String school,
                                 @Param("position") String position);
+
+      @Query(value = "SELECT * FROM service where expert_name=:name",
+              nativeQuery = true)
+      List<Service> findByExpert_name(String name);
 }

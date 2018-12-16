@@ -1,5 +1,7 @@
 package com.app.app.controller;
 
+import com.app.app.VO.ExpertVO;
+import com.app.app.VO.ServiceVO;
 import com.app.app.entity.Expert_customize;
 import com.app.app.entity.Reservation;
 import com.app.app.entity.Service;
@@ -23,7 +25,7 @@ public class SearchController {
 
     @RequestMapping(value="/searchExpert",method= RequestMethod.GET)
     @ResponseBody
-    public List<Expert_customize> searchExpert(HttpServletRequest request) {
+    public List<ExpertVO> searchExpert(HttpServletRequest request) {
         String name=request.getParameter("name");
         String specialty=request.getParameter("specialty");
         String position=request.getParameter("position");
@@ -33,7 +35,7 @@ public class SearchController {
 
     @RequestMapping(value="/searchService",method= RequestMethod.GET)
     @ResponseBody
-    public List<Service> searchService(HttpServletRequest request) {
+    public List<ServiceVO> searchService(HttpServletRequest request) {
         String title=request.getParameter("title");
         String specialty=request.getParameter("specialty");
         String position=request.getParameter("position");
