@@ -21,41 +21,13 @@ public class UserServiceTest {
     private UserService userService;
     private Object object;
 
-//    @Test
-//    public void getReservations() {
-//        for (Object object:userService.getReservations("1")){
-//            System.out.println(object.getClass());
-//        }
-//
-//    }
-//
-//    @Test
-//    public void getReservationList() {
-//        userService.getReservationList("normal").toString();
-//    }
-
-//    @Test
-//    public void getReservationListByWidAndState() {
-//        System.out.println(userService.getReservationListByWidAndState("normal","001").toString());
-//    }
-//
-//
-//
-//    @Test
-//    public void getUserByName() {
-//        System.out.println(userService.getUserByName("gaoqiang").toString());
-//    }
 
 ////    @Test
 ////    public void getReservationList() {
 ////        System.out.println(userService.getReservationList(1,"未开始").toString());
 ////    }
 ////
-////    @Test
-////    public void getUserByWeChatID() {
-////        System.out.println(userService.getUserByWeChatID("001").toString());
-////    }
-//
+
 ////    @Test
 ////    public void modifyUser() {
 ////        User user = userService.getUserByName("zhangsan");
