@@ -46,7 +46,7 @@ public class SearchServiceImpl implements SearchService {
         List<com.app.app.entity.Service> serviceList = serviceRepository.findService(title, specialty, school, position);
         List<ServiceVO> serviceVOList = new ArrayList<>();
         for(com.app.app.entity.Service singleService : serviceList){
-            ExpertVO expertVO = getExpert(singleService.getExpert_name(),null,null,null).get(0);
+            ExpertVO expertVO = getExpert(singleService.getExpert_name(),null,null,null, null).get(0);
             ServiceVO serviceVO = new ServiceVO(singleService,expertVO);
             serviceVOList.add(serviceVO);
         }
@@ -54,8 +54,8 @@ public class SearchServiceImpl implements SearchService {
     }
 
     @Override
-    public List<ExpertVO> getExpert(String name, String specialty, String school, String position) {
-        List<Expert_customize> expertList = expertRepository.findExpert_customizeComplex(name, specialty, school, position);
+    public List<ExpertVO> getExpert(String name, String specialty, String school, String position, String expertID) {
+        List<Expert_customize> expertList = expertRepository.findExpert_customizeComplex(name, specialty, school, position,expertID);
         List<ExpertVO> expertVOList = new ArrayList<>();
         for(Expert_customize singleExpert : expertList){
             expertVOList.add(convertExpertToVO(singleExpert));
