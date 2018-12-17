@@ -17,6 +17,7 @@ public class User {
     private String phone;
     private String email;
     private String company;
+    private  String Avatar;//头像
 
     public String getWid() {
         return wid;
@@ -66,6 +67,14 @@ public class User {
         this.company = company;
     }
 
+    public String getAvatar() {
+        return Avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        Avatar = avatar;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -75,6 +84,7 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", company='" + company + '\'' +
+                ", Avatar='" + Avatar + '\'' +
                 '}';
     }
 }

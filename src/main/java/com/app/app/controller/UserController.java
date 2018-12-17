@@ -5,7 +5,6 @@ import com.app.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,8 +23,8 @@ public class UserController {
         String wid=request.getParameter("wid");
         if(userService.getUserByWid(wid)==null){
             User user=new User();
-
             user.setWid(wid);
+            user.setAvatar(request.getParameter("avatar"));
             userService.addUser(user);
             return "新用户";
         }
@@ -44,10 +43,8 @@ public class UserController {
         return userService.getUserByWid(wid);
     }
 
-    // 。此时用户还可以进行修改操作，需要一个修改用户接口，传给你id
-    // 所以头像可以写，微信的服务器已经帮我们存好了，我用链接去访问吧，虽然慢了点，也没关系。
-    //修改个人基本信息
-    @RequestMapping(value="/modifyUserInfo",method= RequestMethod.GET)
+    // 修改个人基本信息,需要一个修改用户接口，传给你id
+    @RequestMapping(value="/modifyUserInfo")
     @ResponseBody
     public User modifyUserInfo(HttpServletRequest request){
         String wid=request.getParameter("wid");
