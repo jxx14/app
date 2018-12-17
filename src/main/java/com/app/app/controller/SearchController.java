@@ -30,7 +30,8 @@ public class SearchController {
         String specialty=request.getParameter("specialty");
         String position=request.getParameter("position");
         String school=request.getParameter("school");
-        return searchService.getExpert(name,specialty,school,position);
+        String expertID =request.getParameter("expertID");
+        return searchService.getExpert(name,specialty,school,position,expertID);
     }
 
     @RequestMapping(value="/searchService",method= RequestMethod.GET)

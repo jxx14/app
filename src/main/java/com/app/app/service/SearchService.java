@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface SearchService {
 
-    List<ExpertVO> getExpert(String name, String specialty, String school, String position);
+    List<ExpertVO> getExpert(String name, String specialty, String school, String position, String expertID);
 
     List<ServiceVO> getService(String title, String specialty, String school, String position);
 
