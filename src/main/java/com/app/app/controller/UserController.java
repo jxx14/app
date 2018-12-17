@@ -38,10 +38,10 @@ public class UserController {
 //  然后进去小程序后我还要用到一个查看用户接口，我传给你一个微信id,  查看用户信息
     @RequestMapping(value="/listUserInfo")
     @ResponseBody
-    public String listUserInfo(HttpServletRequest request){
+    public User listUserInfo(HttpServletRequest request){
         String wid=request.getParameter("wid");
         System.out.println(userService.getUserByWid(wid).toString());
-        return userService.getUserByWid(wid).toString();
+        return userService.getUserByWid(wid);
     }
 
     // 。此时用户还可以进行修改操作，需要一个修改用户接口，传给你id
@@ -68,8 +68,7 @@ public class UserController {
     @ResponseBody
     public List<Object> getReservationList(HttpServletRequest request){
         String wid=request.getParameter("wid");
-        List<Object> reservationList =userService.getReservationList(wid);
-        return reservationList;
+        return userService.getReservationList(wid);
     }
 
 
